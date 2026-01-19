@@ -6,27 +6,27 @@ import (
 
 func TestCleanInput(t *testing.T) {
 	cases := []struct {
-		input string
+		input    string
 		expected []string
 	}{
 		{
-			input: "hello world",
+			input:    "hello world",
 			expected: []string{"hello", "world"},
 		},
 		{
-			input: "this is a string",
+			input:    "this is a string",
 			expected: []string{"this", "is", "a", "string"},
 		},
 		{
-			input: "CAPITAL And lowercase",
+			input:    "CAPITAL And lowercase",
 			expected: []string{"capital", "and", "lowercase"},
 		},
 		{
-			input: "   whitespace before and after string   ",
+			input:    "   whitespace before and after string   ",
 			expected: []string{"whitespace", "before", "and", "after", "string"},
 		},
 		{
-			input: "big           space",
+			input:    "big           space",
 			expected: []string{"big", "space"},
 		},
 	}
@@ -38,7 +38,7 @@ func TestCleanInput(t *testing.T) {
 		for i := range actual {
 			word := actual[i]
 			expectedWord := c.expected[i]
-			if word != expectedWord	{
+			if word != expectedWord {
 				t.Errorf("expected: %v, got %v", expectedWord, word)
 			}
 		}
