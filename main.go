@@ -12,6 +12,7 @@ func main() {
 	cfg := &config{
 		pokeapiClient: pokeClient,
 	}
+
 	if err := replLoop(cfg); err != nil {
 		os.Exit(1)
 	}
